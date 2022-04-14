@@ -52,11 +52,15 @@ public class RomanArabianCalc {
             System.out.println(str0 + " " + operation + " " + str3 + " = " + resultRoman);
         }
 
-        number1 = Integer.parseInt(str0);
-        number2 = Integer.parseInt(str3);
-        result = Calculated.calculated(number1, number2, operation);
-        System.out.println(number1 + " " + operation + " " + number2 + " = " + result);
 
+        try {
+            number1 = Integer.parseInt(str0.trim());
+            number2 = Integer.parseInt(str3.trim());
+            result = Calculated.calculated(number1, number2, operation);
+            System.out.println(number1 + " " + operation + " " + number2 + " = " + result);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Catch exc " + nfe.getMessage());
+        }
 
 
 
